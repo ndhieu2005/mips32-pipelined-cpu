@@ -12,8 +12,8 @@ module regfile (
     input  wire        reset,
     input  wire        reg_write,
     input  wire [4:0]  read_reg1,
-    input  wire [4:0]  write_reg,
     input  wire [4:0]  read_reg2,
+    input  wire [4:0]  write_reg,
     input  wire [31:0] write_data,
     output wire [31:0] read_data1,
     output wire [31:0] read_data2

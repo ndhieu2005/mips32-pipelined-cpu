@@ -8,7 +8,7 @@ module inst_memory (
 reg [31:0] memory [0:`IMEM_SIZE - 1];
 
 initial begin
-    $readmemh("asm/instruction.hex", memory);
+    $readmemh("asm/fibonacci.hex", memory);
 end
 
 assign instruction = memory[address[31:2]];

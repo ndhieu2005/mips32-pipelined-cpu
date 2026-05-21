@@ -1,0 +1,19 @@
+# Local configuration files
+CLAUDE.md
+CONTEXT.md
+.claude/
+
+# Review and documentation files
+review_sprint1_an_hieu.txt
+Tài liệu hướng dẫn*.pdf
+
+# Simulation outputs
+sim.out
+
+# OS and editor files
+.DS_Store
+*.swp
+*.swo
+*~
+.vscode/
+.idea/

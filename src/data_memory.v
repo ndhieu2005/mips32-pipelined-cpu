@@ -6,7 +6,7 @@ module data_memory (
     input  wire        mem_read,
     input  wire [31:0] address,
     input  wire [31:0] write_data,
-    output reg  [31:0] read_data
+    output wire [31:0] read_data
 );
 
 reg [31:0] memory [0:`DMEM_SIZE - 1];
@@ -16,11 +16,8 @@ always @(posedge clk) begin
         memory[address[31:2]] <= write_data;
 end
 
-always @(*) begin
-    if (mem_read)
-        read_data = memory[address[31:2]];
-    else
-        read_data = 32'b0;
-end
+// Gate read by mem_read so pipeline sees 0 when lw is not in flight.
+// MemtoReg mux downstream decides whether this value propagates to WB.
+assign read_data = mem_read ? memory[address[31:2]] : 32'b0;
 
 endmodule

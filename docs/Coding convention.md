@@ -112,14 +112,14 @@ module alu_control (
 
 #### 3. Bộ nhớ Lệnh (inst_memory.v)
 
-Yêu cầu: Nạp chương trình Fibonacci từ `asm/instruction.hex`.
+Yêu cầu: Nạp chương trình Fibonacci từ `asm/fibonacci.hex`.
 
 ```verilog
 module inst_memory (
     input  wire [31:0] address,
     output wire [31:0] instruction
 );
-// Sử dụng $readmemh("asm/instruction.hex", memory)
+// Sử dụng $readmemh("asm/fibonacci.hex", memory)
 ```
 
 #### 4. Bộ nhớ Dữ liệu (data_memory.v)

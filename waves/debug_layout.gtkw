@@ -1,0 +1,105 @@
+[*]
+[*] GTKWave layout — MIPS 5-stage pipelined CPU debug view
+[*] Open with: gtkwave waves/mips_sim.vcd waves/debug_layout.gtkw
+[*]
+[dumpfile] "waves/mips_sim.vcd"
+[savefile] "waves/debug_layout.gtkw"
+[timestart] 0
+[size] 1400 900
+[pos] 0 0
+*-18.000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+
+@28
+mips_tb.clk
+mips_tb.reset
+
+@200
+----- IF Stage -----
+
+@28
+mips_tb.dut.pc[31:0]
+
+@200
+----- IF/ID Register -----
+
+@28
+mips_tb.dut.if_id_instr[31:0]
+mips_tb.dut.if_id_pc4[31:0]
+
+@200
+----- ID/EX Register -----
+
+@28
+mips_tb.dut.id_ex_pc4[31:0]
+mips_tb.dut.id_ex_rd1[31:0]
+mips_tb.dut.id_ex_rd2[31:0]
+mips_tb.dut.id_ex_sign_ext[31:0]
+mips_tb.dut.id_ex_rs[4:0]
+mips_tb.dut.id_ex_rt[4:0]
+mips_tb.dut.id_ex_rd[4:0]
+
+@200
+----- Control Signals (ID/EX) -----
+
+@28
+mips_tb.dut.id_ex_reg_write
+mips_tb.dut.id_ex_mem_read
+mips_tb.dut.id_ex_mem_write
+mips_tb.dut.id_ex_mem_to_reg
+mips_tb.dut.id_ex_branch
+mips_tb.dut.id_ex_alu_src
+mips_tb.dut.id_ex_reg_dst
+mips_tb.dut.id_ex_alu_op[1:0]
+
+@200
+----- EX Stage — Forwarding -----
+
+@28
+mips_tb.dut.forward_a[1:0]
+mips_tb.dut.forward_b[1:0]
+mips_tb.dut.alu_src_a[31:0]
+mips_tb.dut.alu_src_b[31:0]
+mips_tb.dut.ex_alu_result[31:0]
+mips_tb.dut.ex_alu_zero
+
+@200
+----- EX/MEM Register -----
+
+@28
+mips_tb.dut.ex_mem_alu_result[31:0]
+mips_tb.dut.ex_mem_write_data[31:0]
+mips_tb.dut.ex_mem_write_reg[4:0]
+mips_tb.dut.ex_mem_reg_write
+mips_tb.dut.ex_mem_mem_read
+mips_tb.dut.ex_mem_mem_write
+
+@200
+----- MEM/WB Register -----
+
+@28
+mips_tb.dut.mem_wb_alu_result[31:0]
+mips_tb.dut.mem_wb_read_data[31:0]
+mips_tb.dut.mem_wb_write_reg[4:0]
+mips_tb.dut.mem_wb_reg_write
+mips_tb.dut.mem_wb_mem_to_reg
+
+@200
+----- Hazard Signals -----
+
+@28
+mips_tb.dut.stall
+mips_tb.dut.branch_taken
+mips_tb.dut.id_jump
+mips_tb.dut.flush_if_id
+mips_tb.dut.flush_id_ex
+
+@200
+----- WB Write-back -----
+
+@28
+mips_tb.dut.wb_write_data[31:0]
+mips_tb.dut.mem_wb_write_reg[4:0]
+mips_tb.dut.mem_wb_reg_write
+
+[pattern_trace] 1
+[pattern_trace] 0
