@@ -597,4 +597,4 @@ Lưu tất cả ảnh vào thư mục `docs/figures/` (tự tạo) để có ch�
 
 ---
 
-*Cẩm nang này được biên soạn bởi Tự (nhóm trưởng) cho team MI4344. Mọi câu hỏi liên hệ Tự trực tiếp, không gửi qua Zalo lẻ tẻ.*
+*Cẩm nang này được biên soạn bởi Tự. Mọi câu hỏi thắc mắc hãy gửi vào nhóm zalo chung.*
